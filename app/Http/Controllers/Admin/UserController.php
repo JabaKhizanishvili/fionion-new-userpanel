@@ -250,6 +250,8 @@ class UserController extends Controller
                     'value' => $saveData['value'][$key]
                 ]);
             }
+        } else {
+            $user->balances()->delete();
         }
 
         if (isset($saveData['wall_currency_id'])) {
@@ -260,6 +262,8 @@ class UserController extends Controller
                     'address' => $saveData['address'][$key]
                 ]);
             }
+        } else {
+            $user->wallets()->delete();
         }
 
         $original = array_merge($user->getRawOriginal(), $user->profile->getRawOriginal());
