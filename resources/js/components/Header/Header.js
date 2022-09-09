@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "@inertiajs/inertia-react";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
+import { LangSwitcher1 } from "../LangSwitcher/LangSwitcher1";
 import "./Header.css";
 import { navbar } from "./NavData";
 import { usePage } from "@inertiajs/inertia-react";
@@ -130,7 +131,7 @@ const Header = () => {
                                     /> */}
                                     {__("header_sign_in")}
                                 </Link>
-                                <LangSwitcher />
+                                <LangSwitcher1 />
                             </div>
                         )}
                         {userName && (
@@ -150,7 +151,7 @@ const Header = () => {
                                     />
                                     {userName}
                                 </Link>
-                                <LangSwitcher />
+                                <LangSwitcher1 />
                             </div>
                         )}
                     </div>

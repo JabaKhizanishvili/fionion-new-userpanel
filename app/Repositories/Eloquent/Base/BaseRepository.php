@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Repositories/Eloquent/Base/BaseRepository.php
  *
@@ -54,7 +55,7 @@ class BaseRepository implements EloquentRepositoryInterface
      *
      * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
      */
-    public function all(array $columns = ["*"],array $with = [])
+    public function all(array $columns = ["*"], array $with = [])
     {
         return $this->model->with($with)->get($columns);
     }
@@ -70,7 +71,6 @@ class BaseRepository implements EloquentRepositoryInterface
     {
         try {
             return $this->model->create($attributes);
-
         } catch (\Illuminate\Database\QueryException $exception) {
             return $exception->errorInfo;
         }
@@ -105,7 +105,7 @@ class BaseRepository implements EloquentRepositoryInterface
     {
         $this->model = $this->findOrFail($id);
         try {
-            if($this->model instanceof User){
+            if ($this->model instanceof User) {
                 $this->model->update(['deleted_by' => auth()->id()]);
 
                 $log = new Log([
@@ -116,7 +116,7 @@ class BaseRepository implements EloquentRepositoryInterface
                     'name' => \auth()->user()->profile ? \auth()->user()->profile->name : '',
                     'surname' => \auth()->user()->profile ? \auth()->user()->profile->surname : '',
                     'action' => 'delete',
-                    'details' => 'Deleted user: '. $this->model->email
+                    'details' => 'Deleted user: ' . $this->model->email
                 ]);
                 $log->save();
             }

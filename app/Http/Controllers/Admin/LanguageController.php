@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Http/Controllers/Admin/LanguageController.php
  *
@@ -13,6 +14,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\LanguageRequest;
 use App\Models\Language;
 use App\Repositories\LanguageRepositoryInterface;
+use App\Repositories\Eloquent\LanguageRepository;
 
 /**
  * Class LanguageController
@@ -26,7 +28,7 @@ class LanguageController extends Controller
      */
     private $languageRepository;
 
-    public function __construct(LanguageRepositoryInterface $languageRepository)
+    public function __construct(LanguageRepository $languageRepository)
     {
         $this->middleware('isAdmin');
 
@@ -63,7 +65,6 @@ class LanguageController extends Controller
             'url' => $url,
             'method' => $method
         ]);
-
     }
 
     /**
@@ -136,6 +137,7 @@ class LanguageController extends Controller
      */
     public function update(string $locale, Language $language, LanguageRequest $request)
     {
+        dd($request->all());
         $attributes = [
             'title' => $request['title'],
             'locale' => $request['locale'],

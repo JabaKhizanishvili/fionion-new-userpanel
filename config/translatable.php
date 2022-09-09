@@ -11,16 +11,9 @@
     ),
     1 => 
     array (
-      'id' => 3,
-      'locale' => 'ge',
-      'title' => 'georgian',
-      'file' => NULL,
-    ),
-    2 => 
-    array (
-      'id' => 4,
+      'id' => 2,
       'locale' => 'ru',
-      'title' => 'russian',
+      'title' => 'Русский',
       'file' => NULL,
     ),
   ),

@@ -28,7 +28,7 @@
         <div class="left-content">
             <span class="main-content-title mg-b-0 mg-b-lg-1">Language - {{$language->title ? 'Update' : 'Create'}}</span>
         </div>
-         
+
     </div>
     <!-- /breadcrumb -->
 
@@ -38,7 +38,7 @@
         <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    
+
 
                     <div class="form-group">
                         {!! Form::label('title',__('admin.title'),['class' => 'form-label']) !!}
@@ -101,6 +101,20 @@
     <!-- /row -->
 
     <!-- row -->
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="input-images"></div>
+                    @if ($errors->has('images'))
+                        <span class="help-block">
+                                            {{ $errors->first('images') }}
+                                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- row closed -->
     {!! Form::close() !!}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Repositories/Eloquent/LanguageRepository.php
  *
@@ -18,7 +19,7 @@ use App\Repositories\LanguageRepositoryInterface;
  * Class LanguageRepository
  * @package App\Repositories\Eloquent
  */
-class LanguageRepository extends BaseRepository implements LanguageRepositoryInterface
+class LanguageRepository extends BaseRepository
 {
     /**
      * LanguageRepository constructor.

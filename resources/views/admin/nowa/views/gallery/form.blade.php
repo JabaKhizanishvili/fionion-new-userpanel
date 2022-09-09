@@ -29,7 +29,7 @@
         <div class="left-content">
             <span class="main-content-title mg-b-0 mg-b-lg-1">{{$gallery->created_at ? __('admin.gallery-update') : __('admin.gallery-create')}}</span>
         </div>
-         
+
     </div>
     <!-- /breadcrumb -->
     <input name="old-images[]" id="old_images" hidden disabled value="{{$gallery->files}}">
@@ -72,7 +72,7 @@
                         </div>
                         <?php $n = 1 ;?>
                         @foreach($gallery->files as $item)
-                        <div class="form-group">
+                    <div class="form-group">
                             <input type="text" name="youtube[]" class="form-control" value="{{$item->youtube}}" placeholder="<?=$n++;?> - @lang('admin.youtube_video_id')">
                         </div>
                         @endforeach

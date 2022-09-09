@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->boolean('verified')->default(0);
             // $table->string('verification_proggress')->nullable();
             $table->string('status')->default('waiting');
-            $table->json('balance')->nullable();
+            $table->json('balance');
             $table->boolean('is_admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
