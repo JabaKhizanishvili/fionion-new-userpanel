@@ -33,7 +33,8 @@
     <!-- /breadcrumb -->
 
     <!-- row -->
-    {!! Form::model($language,['url' => $url, 'method' => $method]) !!}
+    {{-- {!! Form::model($language,['url' => $url, 'method' => $method]) !!} --}}
+    {!! Form::model($language,['url' => $url, 'method' => $method,'files' => true ]) !!}
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card">
@@ -100,6 +101,7 @@
 
     <!-- /row -->
 
+    <input name="old-images[]" id="old_images" hidden disabled value="{{$language->files}}">
     <!-- row -->
     <div class="row">
         <div class="col-lg-12 col-md-12">

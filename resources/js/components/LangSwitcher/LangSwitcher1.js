@@ -4,7 +4,7 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 
 export const LangSwitcher1 = () => {
     const { locales, currentLocale, locale_urls } = usePage().props;
-    console.log(locale_urls);
+    console.log(locale_urls, locales, 'esaa');
 
     let languages = [];
     // locales.map((locale, index) => {
@@ -31,8 +31,14 @@ export const LangSwitcher1 = () => {
                 if (locale.locale === currentLocale) {
                     return (
                         <div key={index} className="on">
-                          <img src={"/img/icons/header/" + locale.locale + ".svg"} alt="" />
+                          {/* <img src={"/img/icons/header/" + locale.locale + ".svg"} alt="" /> */}
 
+                          <img src={locale.latest_image != null
+                                            ? "/" +
+                                            locale.latest_image.path +
+                                            "/" +
+                                            locale.latest_image.title
+                                            : null} alt={locale.locale} />
 
                         </div>
                     );
@@ -44,7 +50,15 @@ export const LangSwitcher1 = () => {
                     if (locale.locale !== currentLocale) {
                         return (
                             <a href={locale_urls[locale.locale]} key={i}>
-                                {locale.locale}
+                                {/* {locale.locale} */}
+
+                                <img src={locale.latest_image != null
+                                            ? "/" +
+                                            locale.latest_image.path +
+                                            "/" +
+                                            locale.latest_image.title
+                                            : null} alt={locale.locale} />
+
                             </a>
                         );
                     }

@@ -14,7 +14,12 @@
       'id' => 2,
       'locale' => 'ru',
       'title' => 'Русский',
-      'file' => NULL,
+      'file' => 
+      array (
+        'fileable_id' => 2,
+        'title' => '20220911482.png',
+        'path' => 'storage/Language/2',
+      ),
     ),
   ),
   'locale_separator' => '-',

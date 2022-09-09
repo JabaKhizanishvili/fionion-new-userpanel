@@ -44,7 +44,7 @@ class HandleInertiaRequests extends Middleware
         $user = auth()->user();
         $this->settings();
         // $locales = config("translatable.locales");
-        $locales = Language::all();
+        $locales = Language::with('latestImage')->get();
         $currentRoute = url()->current();
         //        dd($user->only(['email']));
 

@@ -137,7 +137,8 @@ class LanguageController extends Controller
      */
     public function update(string $locale, Language $language, LanguageRequest $request)
     {
-        dd($request->all());
+        // dd($request->file("images"));
+        // dd($request->all());
         $attributes = [
             'title' => $request['title'],
             'locale' => $request['locale'],
