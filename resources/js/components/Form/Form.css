@@ -1,0 +1,67 @@
+.form {
+    max-width: 780px;
+    font-size: 14px;
+}
+.form p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.form .flex {
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 18px;
+}
+.form .flex .input {
+    margin-right: 10px;
+}
+.form .flex input:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    transition: 0.3s all;
+}
+.form .flex div {
+    width: 80%;
+}
+.form label {
+    width: 25%;
+    flex-shrink: 0;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.form input::placeholder,
+.form textarea::placeholder {
+    opacity: 0.5;
+}
+.form_box .img {
+    width: 100%;
+    height: auto;
+}
+.form_box .form {
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 800px) {
+    .form .flex {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .form .flex .input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .form label {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .form_box {
+        width: 100%;
+    }
+    .form_box .form {
+        padding: 19px;
+    }
+}
