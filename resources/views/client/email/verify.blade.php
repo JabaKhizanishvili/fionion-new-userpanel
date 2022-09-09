@@ -75,7 +75,8 @@
             {{-- {{$subject}} --}}
 
 
-            <p>{{$text}}</p>
+            {{-- <p>{{$text}}</p> --}}
+            <pre>{{strip_tags($text)}}</pre>
             {{-- <h2> სრული სახელი: {{$data['name']}}</h2>
             <h2> ელ-ფოსტა: {{$data['email']}}</h2>
             <h2> მობილური: {{$data['phone']}}</h2>
